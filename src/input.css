@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/* Preline UI */
+@source "./node_modules/preline/dist/*.js";
+@import "preline/variants.css";
+
+/* Plugins */
+@plugin "@tailwindcss/forms";
+
+@theme {
+  --font-raleway: "Raleway";
+  --font-poppins: "Poppins", Helvetica, sans-serif;
+}
+
+.dot {
+  @apply w-1.5 h-1.5 mx-0.75 mt-0.5 bg-[#cf1717] rounded-[50%] inline-block;
+}
+
+.radio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin: 0;
+}
+
+.radio > span {
+  border-radius: 50%;
+  background-color: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.radio > span:after {
+  /* content:''; */
+  display: none;
+  border-radius: 100% !important;
+}
+
+.radio > input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.open {
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  opacity: 1;
+}
